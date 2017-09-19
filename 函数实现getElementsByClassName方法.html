@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数实现通过类名获取元素</title>
+</head>
+<body>
+	<h1>What to buy</h1>
+	<p title="a gentle reminder">Don't forget to buy this stuff.</p>
+	<ul id="purchases">
+		<li>A tin of beans</li>
+		<li class="sale">Cheese</li>
+		<li class="sale important">Milk</li>
+	</ul>
+	<script>
+		function getElementsByClassName(node,classname){
+			if (node.getElementsByClassName) {
+				return node.getElementsByClassName(classname);
+			} else {
+				var results = new Array();
+				var elems = node.getElementsByTagName("*");
+				for (var i = 0; i < elems.length; i++) {
+					if(elems[i].className.indexOf(classname) != -1){
+						results[results.length]=elems[i];
+					}
+				}	
+				return results;
+			}
+		}
+		var shopping = document.getElementById("purchases");
+		var sales = getElementsByClassName(shopping,"sale");
+		alert(sales.length);
+	</script>
+</body>
+</html>
