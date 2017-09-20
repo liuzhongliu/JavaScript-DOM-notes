@@ -13,22 +13,38 @@
 		<li class="sale important">Milk</li>
 	</ul>
 	<script>
+		// 声明具有节点和类名参数的新函数
 		function getElementsByClassName(node,classname){
 			if (node.getElementsByClassName) {
 				return node.getElementsByClassName(classname);
+				// 如果元素本身具有该方法，则直接调用，返回
+
 			} else {
 				var results = new Array();
+				// 声明一个空数组，准备容纳后面获取到的元素集合
+
 				var elems = node.getElementsByTagName("*");
+				// 获取该节点所有元素
+
 				for (var i = 0; i < elems.length; i++) {
+					// 对节点内所有元素进行遍历
+
 					if(elems[i].className.indexOf(classname) != -1){
+						// 获取与给定参数相同的类名
+
 						results[results.length]=elems[i];
+						// 如果元素的 className（所有 'class' 组成的字符串）包含你所期望的 'class'，则在前面创建的数组中添加该元素。
+
 					}
 				}	
 				return results;
+				// 返回结果数组
 			}
 		}
 		var shopping = document.getElementById("purchases");
 		var sales = getElementsByClassName(shopping,"sale");
+		// 调用函数
+		
 		alert(sales.length);
 	</script>
 </body>

@@ -14,12 +14,22 @@
 	</ul>
 	<script>
 	var shopping = document.getElementById("purchases");
+	// 将id为'purchases'的元素作为一个对象赋值于'shopping'
+
 	var items = shopping.getElementsByTagName("*");
+	// 获取'shopping'对象里所有标签元素作为一个数组赋值于'items'
+
 	alert(items.length);
+	// 获取'items'数组的长度
+
 	for (var i = 0; i < items.length; i++) {
 		alert(typeof items[i]);
 	}
+	// 遍历数组里的值并验证数组里的每个值都为一个对象
+
 	alert(document.getElementsByClassName("sale").length);
+	// 获取具有'sale'类名的元素并alert其个数
+	
 	</script>
 </body>
 </html>
