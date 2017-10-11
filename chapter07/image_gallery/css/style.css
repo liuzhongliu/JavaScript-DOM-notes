@@ -1,0 +1,50 @@
+body {
+	font-family: "Helvetica","Arial",serif;
+	color: #369;
+	background-color: #ccc;
+	margin: 1em 10%;
+}
+
+h1 {
+	color: #369;
+	background-color: transparent;
+}
+
+a {
+	color: #c60;
+	background-color: transparent;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+ul {
+	padding: 0;
+}
+
+li {
+	float: left;
+	padding: 1em;
+	list-style: none;
+}
+
+img {
+	display: block;
+	clear: both;
+}
+
+#description {
+	position: relative;
+	left: 120px;
+}
+
+#imagegallery {
+	list-style: none;
+}
+
+#imagegallery li {
+	padding-left: 0; 
+}
+
+#imagegallery li a img {
+	border: 0;
+}

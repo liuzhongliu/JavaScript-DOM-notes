@@ -1,30 +1,20 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <title>Example</title>
-<script type="text/JavaScript">
-window.onload = function() {
-  if (!document.getElementsByTagName) return false;
-  var lnks = document.getElementsByTagName("a");
-  for (var i=0; i<lnks.length; i++) {
-    if (lnks[i].getAttribute("class") == "popup") {
-      lnks[i].onclick = function() {
-        popUp(this.getAttribute("href"));
-        return false;
-      }
-    }
-  }
-}
-
-function popUp(winURL) {
-  window.open(winURL,"popup","width=320,height=480");
-}
-
-</script>
+	<meta charset="UTF-8">
+	<title>Example</title>
+	<script src="newwindow.js"></script>
 </head>
 <body>
-<a href="http://www.example.com/" class="popup">Example</a>
+	<a href="javascript:popUp('http://www.example.com/');">Example1</a>
+	<!-- "javascript:"伪协议 -->
+	<p style="visibility: hidden;">.</p>
+	<a href= "#" onclick="popUp('http://www.example.com/'); return false;">Example2</a>
+	<!-- 内嵌的事件处理函数 -->
+	<p style="visibility: hidden;">.</p>
+	<a href="http://www.example.com/" onclick="popUp(this.href); return false;">Example3</a>
+	<!-- 为javascript代码预留退路，提供真实URL地址，利用DOM提供的this.href属性精简代码，this可以用来代表任何一种当前元素。 -->
+	<p style="visibility: hidden;">.</p>
+	<a href="http://www.example.com/" class="popup">Example4</a>
 </body>
 </html>
